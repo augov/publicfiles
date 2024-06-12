@@ -1,6 +1,6 @@
 local actions = {}
 
-local sp = require(script.Parent.SimplePath)
+local sp = loadstring(game:HttpGet('https://raw.githubusercontent.com/grayzcale/simplepath/main/src/SimplePath.lua'))
 local player = game.Players.LocalPlayer
 local char = player.Character
 local hum = char.Humanoid
