@@ -1,6 +1,6 @@
 local actions = {}
 
-local sp = loadstring(game:HttpGet('https://raw.githubusercontent.com/grayzcale/simplepath/main/src/SimplePath.lua'))
+local sp = loadstring(game:HttpGet('https://raw.githubusercontent.com/grayzcale/simplepath/main/src/SimplePath.lua', true))()
 local player = game.Players.LocalPlayer
 local char = player.Character
 local hum = char.Humanoid
@@ -21,7 +21,7 @@ function actions.jump()
 end
 
 function actions.walkto(pos)
-	local path = sp.new(char)
+	path = sp.new(char)
 	path:Run(pos)
 	
 	path.Blocked:Connect(function()
