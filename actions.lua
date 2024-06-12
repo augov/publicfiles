@@ -1,9 +1,10 @@
 local actions = {}
 
-local sp = loadstring(game:HttpGet('https://raw.githubusercontent.com/grayzcale/simplepath/main/src/SimplePath.lua'))
+local sp = require(script.Parent.SimplePath)
 local player = game.Players.LocalPlayer
 local char = player.Character
 local hum = char.Humanoid
+local path = sp.new(char)
 
 --actions
 
@@ -31,8 +32,6 @@ end
 function actions.followplayer(player)
 	local target = game.Players:FindFirstChild(player)
 	local targetroot = target.Character.HumanoidRootPart
-	
-	local path = sp.new(char)
 	
 	path:Run(targetroot)
 
