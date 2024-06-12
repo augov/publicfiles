@@ -32,7 +32,7 @@ end
 function actions.followplayer(player)
 	local target = game.Players:FindFirstChild(player)
 	local targetroot = target.Character.HumanoidRootPart
-	
+
 	path:Run(targetroot)
 
 	path.Blocked:Connect(function()
