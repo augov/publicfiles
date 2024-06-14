@@ -3,15 +3,17 @@ local actions = {}
 local sp = loadstring(game:HttpGet('https://raw.githubusercontent.com/grayzcale/simplepath/main/src/SimplePath.lua', true))()
 local player = game.Players.LocalPlayer
 
-local path = sp.new(char)
+
 
 local char
 local hum
+local path
 
 --actions
 player.CharacterAdded:Connect(function()
 	char = player.Character
 	hum = char.Humanoid
+	path = sp.new(char)
 end)
 
 function actions.reset()
