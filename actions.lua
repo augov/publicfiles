@@ -17,7 +17,7 @@ function actions.emote(emote)
 end
 
 function actions.jump()
-	hum.Jump = true
+	hum:ChangeState(Enum.HumanoidStateType.Jumping)
 end
 
 function actions.walkto(pos)
