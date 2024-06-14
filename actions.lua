@@ -5,9 +5,9 @@ local player = game.Players.LocalPlayer
 
 
 
-local char
-local hum
-local path
+local char = player.Character
+local hum = char.Humanoid
+local path = sp.new(char)
 
 --actions
 player.CharacterAdded:Connect(function()
