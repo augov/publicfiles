@@ -7,13 +7,14 @@ local char
 local hum
 local path
 
+--actions
+
 function getVariables()
 	char = player.Character
 	hum = char.Humanoid
 	path = sp.new(char)
 end
 
---actions
 player.CharacterAdded:Connect(function()
 	getVariables()
 end)
