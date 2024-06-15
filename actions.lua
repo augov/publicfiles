@@ -3,33 +3,38 @@ local actions = {}
 local sp = loadstring(game:HttpGet('https://raw.githubusercontent.com/grayzcale/simplepath/main/src/SimplePath.lua', true))()
 local player = game.Players.LocalPlayer
 
+local char
+local hum
+local path
 
-
-local char = player.Character
-local hum = char.Humanoid
-local path = sp.new(char)
-
---actions
-player.CharacterAdded:Connect(function()
+function getVariables()
 	char = player.Character
 	hum = char.Humanoid
 	path = sp.new(char)
+end
+
+--actions
+player.CharacterAdded:Connect(function()
+	getVariables()
 end)
 
 function actions.reset()
+	getVariables()
 	hum.Health = 0
 end
 
 function actions.emote(emote)
+	getVariables()
 	hum:PlayEmote(emote)
 end
 
 function actions.jump()
+	getVariables()
 	hum:ChangeState(Enum.HumanoidStateType.Jumping)
 end
 
 function actions.walkto(pos)
-	path = sp.new(char)
+	getVariables()
 	path:Run(pos)
 	
 	path.Blocked:Connect(function()
@@ -38,6 +43,7 @@ function actions.walkto(pos)
 end
 
 function actions.followplayer(player)
+	getVariables()
 	local target = game.Players:FindFirstChild(player)
 	local targetroot = target.Character.HumanoidRootPart
 
