@@ -34,12 +34,12 @@ function actions.jump()
 	hum:ChangeState(Enum.HumanoidStateType.Jumping)
 end
 
-function actions.walkto(pos)
+function actions.walkto(x,y,z)
 	getVariables()
-	path:Run(pos)
+	path:Run(Vector3.new(x,y,z))
 	
 	path.Blocked:Connect(function()
-		path:Run(pos)
+		path:RunVector3.new(x,y,z)
 	end)
 end
 
