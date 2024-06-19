@@ -36,10 +36,10 @@ end
 
 function actions.walkto(x,y,z)
 	getVariables()
-	path:Run(Vector3.new(x,y,z))
+	path:Run(Vector3.new(char.HumanoidRootPart.Position.X,char.HumanoidRootPart.Position.Y,char.HumanoidRootPart.Position.Z)+Vector3.new(x,y,z))
 	
 	path.Blocked:Connect(function()
-		path:Run(Vector3.new(x,y,z)
+		path:Run(Vector3.new(char.HumanoidRootPart.Position.X,char.HumanoidRootPart.Position.Y,char.HumanoidRootPart.Position.Z)+Vector3.new(x,y,z))
 	end)
 end
 
