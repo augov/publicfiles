@@ -39,7 +39,7 @@ function actions.walkto(x,y,z)
 	path:Run(Vector3.new(x,y,z))
 	
 	path.Blocked:Connect(function()
-		path:RunVector3.new(x,y,z)
+		path:Run(Vector3.new(x,y,z))
 	end)
 end
 
