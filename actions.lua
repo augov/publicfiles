@@ -8,21 +8,17 @@ local hum
 local path
 
 --actions
-
 function getVariables()
 	char = player.Character
 	hum = char.Humanoid
 	path = sp.new(char)
 end
 
-player.CharacterAdded:Connect(function()
-	getVariables()
-end)
-
 function actions.reset()
 	getVariables()
 	hum.Health = 0
 	player.CharacterAdded:Wait()
+	getVariables()
 end
 
 function actions.emote(emote)
