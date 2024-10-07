@@ -51,7 +51,7 @@ function actions.walkto(x,y,z)
 	rerun:Disconnect()
 end
 
-function actions.followplayer()
+function actions.followplayer(player)
 	getVariables()
 	local target = game.Players:FindFirstChild(player)
 	local targetroot = target.Character.HumanoidRootPart
